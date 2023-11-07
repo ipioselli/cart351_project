@@ -32,6 +32,42 @@
 
   }
 
+  img{
+    width:70%;
+  }
+
   .hello{
     background-color:beige;
+    padding:50px;
+    display: flex;
+    flex-direction: row;
   }
+
+  .hello-info{
+    text-align: center;
+    padding:50px;
+ 
+    
+  }
+
+  .hello-info h1{
+    font-size: 50px;
+   
+    text-align: center;
+    color:rgb(61, 22, 22);
+  }
+
+  .hello-info p{
+    padding:30px;
+  }
+
+  .hello-info a{
+    padding: 10px;;
+    text-decoration: none;
+    color:rgb(61, 22, 22);
+    border-style: solid;
+    border-radius: 20px;
+   
+   
+  }
+
