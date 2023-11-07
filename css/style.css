@@ -1,0 +1,37 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 20px;
+    font-family: Inter, NeutralFace;
+    color:black;
+    background-color: #ffffff;
+  }
+
+
+  .topnav {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+
+   
+  
+ }
+
+.topnav a{
+   
+    padding: 40px;
+    color: black;
+   text-decoration: none; 
+   
+   float:right;
+
+  }
+
+  .hello{
+    background-color:beige;
+  }
