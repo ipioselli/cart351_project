@@ -71,3 +71,31 @@
    
   }
 
+  .map{
+    text-align: center;
+    background-color: #5C080D;
+    padding:50px;
+    color:white;s
+  }
+
+  .map h2{
+    font-size: 50px;
+  }
+
+  .map h1{
+    font-size: 20px;
+  }
+
+  .map a{
+    padding: 10px;;
+    text-decoration: none;
+    color:white;
+    border-style: solid;
+    border-radius: 20px;
+  }
+
+  .map img{
+    width:50%;
+    padding:20px;
+  }
+
