@@ -25,11 +25,16 @@
 .topnav a{
    
     padding: 40px;
-    color: black;
+    color:rgb(61, 22, 22);
    text-decoration: none; 
    
    float:right;
 
+  }
+
+  .topnav a:hover{
+    color:black;
+    
   }
 
   img{
@@ -71,6 +76,11 @@
    
   }
 
+
+  .hello-info a:hover{
+    color:black;
+  }
+
   .map{
     text-align: center;
     background-color: #5C080D;
@@ -80,10 +90,12 @@
 
   .map h2{
     font-size: 50px;
+    padding:20px;
   }
 
   .map h1{
     font-size: 20px;
+    padding:20px;
   }
 
   .map a{
@@ -94,8 +106,34 @@
     border-radius: 20px;
   }
 
+  .map a:hover{
+    color:black;
+  }
+
   .map img{
     width:50%;
     padding:20px;
+  }
+
+  .purpose h2{
+    font-size: 50px;
+   
+  }
+
+  .purpose{
+    text-align: center;
+    height:500px;
+   
+    padding:50px;
+  }
+
+  .main{
+    padding:20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-each{
+    width:33%;
   }
 
