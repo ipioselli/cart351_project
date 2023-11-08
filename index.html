@@ -6,6 +6,13 @@
     <title>up in flames</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
@@ -38,7 +45,11 @@
 
 <section class="map">
     <h2>Map of Canada</h2>
-    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error nihil nostrum a corporis ipsam fuga consequuntur recusandae voluptas? Architecto corrupti nostrum earum eius sint quam ea nobis magni nulla aperiam.</h1>
+    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error nihil nostrum a corporis ipsam 
+        fuga consequuntur recusandae voluptas? Architecto corrupti nostrum earum eius sint quam ea nobis magni nulla aperiam.</h1>
+        <div id="map" style="width: 50%; height: 400px;"></div>
+
+
     <img src="images/fire.jpeg" alt="">
     <h3><a href="">EXPLORE</a></h3>
 
@@ -115,6 +126,17 @@
 <footer class="bottom">
     <h2>&#169;Cart 351 Website</h2>
 </footer>
-    
+
+
+<script>
+
+	const map = L.map('map').setView([51.505, -0.09], 13);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+</script>
 </body>
 </html>
