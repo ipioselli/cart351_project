@@ -85,7 +85,7 @@
     text-align: center;
     background-color: #5C080D;
     padding:50px;
-    color:white;s
+    color:white;
   }
 
   .map h2{
@@ -133,14 +133,91 @@
     padding:20px;
     display: flex;
     flex-direction: row;
+    background-color: beige;
   }
 
   .main-each{
     width:33%;
-    height:500px;
-    border-style:solid;
+    height:400px;
+    /* border-style:solid;
     border-bottom: #5C080D;
-    border-top: #000000;
+    border-top: #000000; */
    
+  }
+
+  .user-form{
+    padding:50px;
+    text-align: center;
+    height:400px;
+    background-color: #5C080D;
+    
+
+  }
+
+  .user-form h2{
+    font-size: 50px;
+    color:white;
+  }
+
+  .user-form h2{
+    font-size: 50px;
+    padding:20px;
+  }
+
+
+  .quiz{
+    text-align: center;
+    background-color: beige;
+    padding:50px;
+    color:#5C080D;
+  }
+
+
+  .quiz h2{
+    padding:20px;
+    color:#5C080D;
+    font-size: 50px;
+  }
+
+  .quiz h1{
+    padding: 50px;
+  }
+
+  .quiz a{
+    padding: 15px;;
+    text-decoration: none;
+    color:#5C080D;
+    border-style: solid;
+    border-radius: 25px;
+  }
+
+  .quiz a:hover{
+    color:white;
+  }
+
+
+  footer{
+    /* justify-content: space-around; */
+    
+    padding:50px;
+    width:100%;
+  }
+
+  .contact{
+    padding:50px;
+    display: flex;
+    justify-content: space-around;
+   
+  }
+
+
+  footer.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 15vh;
+    background-color:#5C080D;
+
   }
 
