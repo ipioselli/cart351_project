@@ -47,8 +47,10 @@
   .hello{
     background-color:beige;
     padding:50px;
-    display: flex;
-    flex-direction: row;
+    background-image: url("/images/red.jpg");
+background-size: cover;
+    background-repeat: no-repeat;
+
   }
 
   .hello-info{
