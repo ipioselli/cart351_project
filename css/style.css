@@ -36,7 +36,7 @@
   }
 
   .topnav a:hover{
-    color:black;
+    color:white;
     
   }
 
@@ -47,6 +47,7 @@
   .hello{
     background-color:beige;
     padding:50px;
+    height:700px;
     background-image: url("/images/red.jpg");
 background-size: cover;
     background-repeat: no-repeat;
@@ -83,7 +84,7 @@ background-size: cover;
 
 
   .hello-info a:hover{
-    color:black;
+    color:white;
   }
 
   .map{
