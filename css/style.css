@@ -28,11 +28,15 @@
 .topnav a{
    
     padding: 40px;
-    color:rgb(61, 22, 22);
+    color:rgb(61, 22, 22);    
    text-decoration: none; 
    
    float:right;
 
+  }
+
+  .body{
+    
   }
 
   .topnav a:hover{
@@ -45,12 +49,11 @@
   }
 
   .hello{
-    background-color:beige;
+
     padding:50px;
     height:700px;
-    background-image: url("/images/red.jpg");
-background-size: cover;
-    background-repeat: no-repeat;
+    background:url("/images/fire.png") no-repeat fixed center center;
+
 
   }
 
