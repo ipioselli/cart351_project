@@ -1,0 +1,79 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Check if the username is not empty
+    if (empty($username)) {
+        echo "Username cannot be empty!";
+        exit;
+    }
+
+    // Check if the password is not empty
+    if (empty($password)) {
+        echo "Password cannot be empty!";
+        exit;
+    }
+
+    // Check if the user already exists in a text file (users.txt)
+    $usersFile = 'user.txt';
+
+    if (file_exists($usersFile)) {
+        $users = file($usersFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($users as $user) {
+            list($existingUsername, $_) = explode(':', $user);
+            if ($existingUsername === $username) {
+            
+                echo "User already exists!";
+                echo "Go to Login page";
+                exit;
+            }
+        }
+    }
+
+    // Hash the password securely before storing
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Append the new user to the text file
+    $newUser = "$username:$hashedPassword" . PHP_EOL;
+    file_put_contents($usersFile, $newUser, FILE_APPEND | LOCK_EX);
+
+    header('Location: login.php');
+
+} 
+?>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation</title>
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+</head>
+<body>
+
+    <h3><a style="float: right"href="login.php">Login</a></h3>
+
+    <h2>Go Green</h2>
+
+    <div class="register">
+    <h2>Create an Account</h2>
+  <form action="register.php" method="post">
+    <fieldset>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Register">
+
+    </div>
+  
+
+    </fieldset>
+   
+  </form>
+</body>
+</html>

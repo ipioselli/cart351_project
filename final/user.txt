@@ -1,0 +1,11 @@
+ines:$2y$10$dP/XDkKT4V754ONr/mDsFOrLNtxn5FbVISH6j/XhUQg9wVADT46.C
+dolce:$2y$10$L15qfRygCopSFeoTQvAwaeJMY6u1Rr5PgbwsURdv4McTAllOAr.c.
+sam:$2y$10$ZM16JhBC7W1E8a9eqPhkFOV58SF6kpwUFYsxWqMdIzAMptDQNSEpC
+mina:$2y$10$m9ueQv21GxQULS1CDR6OLe7oiMvIJ1Tmylkn0Bwn79UqKZjhrWPnu
+mark:$2y$10$R2njM4dPTGGLPrRMLEAMvOacnlXxfFX6sV1I0etTXCGvzVC8jXU8m
+minji:$2y$10$9l0w07JURukbelGIebfFPuEz5Wch.bqcS8uOXsycqc6hW53Wen1lO
+mac:$2y$10$9oz5nZioComcX48U67x6vu7uJEIwC9KJTMk3yCKmGcSGA405VElJK
+bro:$2y$10$VbMpxcAuc6Fr5loEIh7ek.Zrh4tgVEKWzFsfXdiTNvlp4FfGrNRqO
+juliano:$2y$10$cRqAmeaN8.rCnlBxOoBjUupfmzKxJQaHK0DdmnRHboit0KJHBL5QS
+hey:$2y$10$xEoo/wFsG4F5FlSitPG/euUObL.Nrk7p8x9JjAqTTxeN5Pl7ZzvW.
+water:$2y$10$iPRhexZxywsS.vm.yt7dZuV2LS4W4oVUJhgqUihmgQ4KDl0tvxBp.
