@@ -25,14 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($existingUsername === $username) {
             
                 echo "User already exists!";
-                echo "Go to Login page";
+                // echo "Go to Login page";
+                // header('Location: register.php?error=useralreadyexists');
+
                 exit;
             }
         }
     }
-
-    // Hash the password securely before storing
-    // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Append the new user to the text file
     $newUser = "$username:$password" . PHP_EOL;
@@ -56,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
+
     <h3 class="login"><a href="login.php">Login</a></h3>
 
     <div class="main-register">
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="text" id="username" name="username" required><br>
 <p class="password"><label for="password">Password:</label></p>
 <input type="password" id="password" name="password" required><br><br>
-<input type="submit" value="Register">
+<input type="submit" id="submit-register" value="Register">
 </fieldset>
 </form>
 
