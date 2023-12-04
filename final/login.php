@@ -40,8 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          header('Location: login.php?error:wronguserandpassword');
     }
 } 
-
-
 ?>
 
 
@@ -81,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     </div>
 
+    <!-- footer -->
     <div class="footer">
     <h2>Contact Us</h2>
 
@@ -97,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
 
-
+<!-- second footer -->
     </div>
     <div class="second-footer">
     <h2>&#169;Cart 351 Final Project</h2>

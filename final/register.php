@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
    
 
-    <div class="main-register">
+<div class="main-register">
     <h3 class="login"><a href="login.php">Login</a></h3>
     <h2>Go Green</h2>
 
@@ -74,34 +74,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </fieldset>
 </form>
 
-
 </div>
-
-
-
-
     </div>
     
+    <!-- footer -->
     <div class="footer">
-    <h2>Contact Us</h2>
+        <h2>Contact Us</h2>
 
-    <div class="contact">
-        <div class="contact-us">
-        <p>Ines Pioselli</p>
+        <div class="contact">
+        
+            <div class="contact-us">
+                <p>Ines Pioselli</p>
+            </div>
+            
+            <div class="contact-us">
+                <p>Huyen Tran </p>
+            </div>
 
         </div>
-        <div class="contact-us">
-        <p>Huyen Tran </p>
-
-        </div>
-
     </div>
 
 
-
-    </div>
     <div class="second-footer">
-    <h2>&#169;Cart 351 Final Project</h2>
+        <h2>&#169;Cart 351 Final Project</h2>
     </div>
     
    

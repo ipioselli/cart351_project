@@ -1,3 +1,5 @@
+/* stylesheet for the login and register page */
+
 * {
     margin: 0;
     padding: 0;
@@ -20,8 +22,6 @@
   
     float: right;
     font-size: 1.2em;
-    
-   /* float:right; */
     padding:20px;
     background-color: white;
     border-radius: 25px;
@@ -129,6 +129,7 @@
     cursor: pointer;
   }
 
+  
 /* footer */
 
 .footer{
