@@ -6,31 +6,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climate Change</title>
+    <title>Go Green</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+    
     
   
 <body>
  
+<!-- main div -->
 <div class="main">
 
-  
+    <!-- nav bar section -->
     <div class="topnav">
-        <h2><a href="index.html">Home</a></h2>
+        <h2><a href="index.php">Home</a></h2>
         <h2><a href="">Feed</a></h2>
         <h2><a href="">Quiz</a></h2>
-        <h2><a style="float:right"href="login.php">Login</a></h2>
+        <h2><a style="float:right; border:solid; border-radius: 25px; padding:10px; " href="login.php">Login</a></h2>
     </div>
    
-
+    <!-- user section -->
     <div class="welcome-back">
         <h2 class="username" id="username"></h2>
-        <h2>welcome back!</h2>
-        <h3><a href="">Go to Feed</a></h3>
+        <h1>Welcome back!</h1>
+        <p>Help offset your carbon footprint and go to your feed</p>
+        <h3><a href="feed.php">Go to Feed</a></h3>
     </div>
 
-    <div class="welcome-back">
+    <!-- about the website section -->
+    <div class="about">
     <h1>Climate Changes</h1>
         <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <h3><a href="">More Info</a></h3>
@@ -100,8 +104,9 @@
 
         if (username !== '') {
             usernameElement.textContent = "Hello, " + username + "!";
-            usernameElement.style.fontSize = '2em'; // Change font size dynamically
-            usernameElement.style.color = 'green'; // Change color dynamically
+            usernameElement.style.fontSize = '3em'; // Change font size dynamically
+            usernameElement.style.color = 'white'; // Change color dynamically
+            usernameElement.style.padding = '20px';
             // Add other CSS properties as needed
         } else {
             usernameElement.textContent = "Please log in!";

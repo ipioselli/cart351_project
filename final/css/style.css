@@ -13,22 +13,23 @@
     background: url("../images/sky1.png") no-repeat fixed center center;
     background-size:cover;
     height: 100%;
- 
+
   }
 
 
  
 
-    .username p{
+    .welcome-back h2{
       font-size: 2em;
       color: blue;
+      padding:30px;
   }
 
 
   .topnav {
     overflow: hidden;
     margin-bottom: 20px;
-    border-bottom: 2px solid black;
+    
 
   
  }
@@ -36,10 +37,11 @@
 
 .topnav a{
    
-    padding: 40px;
-    color:rgb(61, 22, 22);    
+    margin:40px;
+    color:rgb(33, 85, 33);
    text-decoration: none; 
    float:left;
+   transition:0.2s;
 
   }
 
@@ -49,12 +51,49 @@
   }
 
 
+
+
+
+
   .welcome-back{
+    background-color: rgba(59, 131, 213, 0.693);;
     text-align: center;
     padding:50px;
+    margin:100px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
     
     
   }
+
+  .welcome-back h1{
+    font-size: 1.5em;
+    color:white;
+  }
+
+  .welcome-back p{
+    padding:10px;
+    margin-bottom:40px;
+    font-size: 1em;
+    color:white;
+  }
+
+  .welcome-back a{
+    background-color: white;
+    margin:40px;
+    padding:20px;
+    text-decoration: none;
+    border-radius: 25px;
+    color:rgb(26, 56, 91);
+    transition:0.4s;
+  }
+
+  .welcome-back a:hover{
+    background-color: rgb(26, 56, 91);
+    color:white;
+    
+  }
+
 
   .hello-info h1{
     font-size: 50px;
@@ -98,12 +137,7 @@
    
   }
 
-  /* .main{
-    padding:20px;
-    display: flex;
-    flex-direction: row;
-    background-color: beige;
-  } */
+
 
   .main-each{
     width:33%;
