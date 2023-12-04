@@ -37,8 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.php');
         exit;
     } else {
-        echo "Invalid username or password!";
-        exit;
+         header('Location: login.php?error:wronguserandpassword');
     }
 } 
 
@@ -50,19 +49,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="css/user.css">
     </head>
     <body>
-        <h2>Login</h2>
+      
+
+    
+
+    <div class="main-register">
+    <h3 class="login"><a href="register.php">Create Account</a></h3>
+        <h2>Go Green</h2>
+
+        <div class="register">
+        <h3>Login</h3>
         <form action="" method="post">
-            <label for="username">Username:</label><br>
+            <fieldset>
+            <p class="username"><label for="username">Username:</label></p>
             <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label><br>
+            <p class="password"><label for="password">Password:</label></p>
             <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" name="login" value="Login">
+            <input type="submit" id="submit-register" name="login" value="Login">
+            </fieldset>
         </form>
+
+
+        </div>
+
+    
+    </div>
+
+    <div class="footer">
+    <h2>Contact Us</h2>
+
+    <div class="contact">
+        <div class="contact-us">
+        <p>Ines Pioselli</p>
+
+        </div>
+        <div class="contact-us">
+        <p>Huyen Tran </p>
+
+        </div>
+
+    </div>
+
+
+
+    </div>
+    <div class="second-footer">
+    <h2>&#169;Cart 351 Final Project</h2>
+    </div>
+        
     </body>
     </html>
-    <?php
 
-?>

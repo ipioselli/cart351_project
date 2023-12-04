@@ -1,12 +1,4 @@
-<?php
-    session_start();
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-        echo "<p>Hello, $username!</p>";
-    } else {
-        echo "<p>Please log in!</p>";
-    }
-  ?>
+
 
 
 <!DOCTYPE html>
@@ -46,6 +38,15 @@
         <h1>Climate Changes</h1>
         <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         <h3><a href="">More Info</a></h3>
+        <?php
+    session_start();
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        echo "<p>Hello, $username!</p>";
+    } else {
+        echo "<p>Please log in!</p>";
+    }
+  ?>
         
 
 
@@ -115,6 +116,8 @@
             <h2>&#169;Cart 351 Prototype</h2>
         </section>
     </section>
+
+    <footer>
 
 
 
