@@ -32,11 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Hash the password securely before storing
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Append the new user to the text file
-    $newUser = "$username:$hashedPassword" . PHP_EOL;
+    $newUser = "$username:$password" . PHP_EOL;
     file_put_contents($usersFile, $newUser, FILE_APPEND | LOCK_EX);
+
 
     header('Location: login.php');
 
@@ -50,30 +51,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Creation</title>
-    <link rel="stylesheet" type="text/css" href="../css/user.css">
+    <title>Account</title>
+    <link rel="stylesheet" type="text/css" href="css/user.css">
 </head>
 <body>
 
-    <h3><a style="float: right"href="login.php">Login</a></h3>
+    <h3 class="login"><a href="login.php">Login</a></h3>
 
+    <div class="main-register">
     <h2>Go Green</h2>
 
-    <div class="register">
-    <h2>Create an Account</h2>
-  <form action="register.php" method="post">
-    <fieldset>
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
-    <input type="submit" value="Register">
+<div class="register">
+<h3>Create an Account</h3>
+<form action="register.php" method="post">
+<fieldset>
+<p class="username"><label for="username">Username:</label></p>
+<input type="text" id="username" name="username" required><br>
+<p class="password"><label for="password">Password:</label></p>
+<input type="password" id="password" name="password" required><br><br>
+<input type="submit" value="Register">
+</fieldset>
+</form>
+
+
+</div>
+
+
+
 
     </div>
-  
-
-    </fieldset>
+    
    
-  </form>
+
 </body>
 </html>

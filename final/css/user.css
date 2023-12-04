@@ -9,7 +9,80 @@
     font-size: 20px;
     font-family: Inter, NeutralFace;
     color:black;
-    background-color: #ffffff;
-      height: 100%;
+    background: url("../images/sky.png") no-repeat fixed center center;
+    background-size:cover;
+    height: 100%;
  
   }
+
+.login a{
+    padding:50px;
+    float: right;
+    text-decoration: none;
+  }
+
+  
+
+  .main-register h2{
+    padding:20px;
+    font-size: 3em;
+    color:rgb(33, 85, 33);
+    text-align: center;
+  }
+
+  .main-register{
+    padding:150px;
+   
+  }
+
+  .register h3{
+    padding:20px;
+    font-size: 2em;
+  }
+
+  .register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(46, 106, 175);
+    padding:50px;
+   border-radius: 25px;
+ 
+
+  }
+
+  .username{
+    padding:10px;
+    font-size: 1.5em;
+  
+  }
+.password{
+    font-size: 1.5em;
+    padding:10px;
+}
+
+#password{
+
+    border:none;
+    padding:10px;
+    font-size: 1em;
+ }
+
+
+
+ #username{
+    border:none;
+    padding:10px;
+    font-size: 1em;
+ }
+  fieldset{
+    border:none;
+    padding:20px;
+  }
+
+  label{
+    display: inline-block;
+
+  }
+
