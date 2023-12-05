@@ -9,30 +9,9 @@
    exit; 
  }
 
- if($_SERVER['REQUEST_METHOD'] == 'POST')
- {
- // need to process
- 
- 
- $task = $_POST['user_task'];
- $date = $_POST['user_date'];
- $username = $_SESSION['username'];
-  
- 
- 
- // check that there is a FILES ARRAY
-
-    $filePath = 'posts.txt';
-    $theFile = fopen($filePath, "a") or die("Unable to open file");
-     //writing to the file
+ if (isset($_GET['action']) && $_GET['action'] === 'displayResults') {
     
- 
-         fwrite($theFile, "\n"."DATE:".$date."\n");
-         fwrite($theFile, "TASK:".$task."\n");
-         fwrite($theFile, "USER:".$username."\n");
-         fclose($theFile);
- 
- 
+    
          //reading from the file
          $theFileToRead = fopen('posts.txt', "r") or die("Unable to open file!");
     //read until eof
@@ -65,6 +44,66 @@
        echo $myJSONObj;
        exit;
      
+  
+    
+  }
+
+ if($_SERVER['REQUEST_METHOD'] == 'POST')
+ {
+ // need to process
+ 
+ 
+ $task = $_POST['user_task'];
+ $date = $_POST['user_date'];
+ $username = $_SESSION['username'];
+  
+ 
+ 
+ // check that there is a FILES ARRAY
+
+    $filePath = 'posts.txt';
+    $theFile = fopen($filePath, "a") or die("Unable to open file");
+     //writing to the file
+    
+ 
+         fwrite($theFile, "\n"."DATE:".$date."\n");
+         fwrite($theFile, "TASK:".$task."\n");
+         fwrite($theFile, "USER:".$username);
+         fclose($theFile);
+ 
+ 
+         //reading from the file
+        //  $theFileToRead = fopen('posts.txt', "r") or die("Unable to open file!");
+    //read until eof
+    //$i=0;
+
+    // $outArr = array();
+    // $NUM_PROPS = 3;
+    //  //echo("test");
+    //    while(!feof($theFileToRead)) {
+    //      //create an object to send back
+ 
+    //      $packObj=new stdClass();
+ 
+    //      for($j=0;$j<$NUM_PROPS;$j++){
+    //        $str = fgets($theFileToRead);
+    //        //split and return an array ...
+    //        $splitArr = explode(":",$str);
+    //        $key = $splitArr[0];
+    //        $val = $splitArr[1];
+    //        //append the key value pair
+    //        $packObj->$key = trim($val);
+    //      }
+    //      $outArr[]=$packObj;
+    //    }
+ 
+    //    fclose($theFileToRead);
+    //      // var_dump($outArr);
+    //      // Now we want to JSON encode these values to send back.
+    //     $myJSONObj = json_encode($outArr);
+    //    echo $myJSONObj;
+    //    exit;
+     
      
  }
 ?>
@@ -92,7 +131,7 @@
     <div class="user-info">
         <h2 id="usernameDisplay" class="display username"></h2>
         <h1>Welcome back!</h1>
-        <h2 id="pointsDisplay" class = "display-points"></h2>
+
         
     </div>
 
@@ -110,6 +149,7 @@
                 <p ><label>Write down the task you completed:</label></p>
                 <p class="task"><label></label><textarea name="user_task" id="task" cols="30" rows="10" type="text" required></textarea></p>
                 <p class="show"><input type="submit" name="submit" value="Submit" id="submit_btn"></p>
+                
               
             </fieldset>
 
@@ -117,6 +157,7 @@
 
         </form>
     </div>
+    <p class="show_results"><input type="submit" name="submit" value="Results" id="results_btn"></p>
 
     <div id="result">
         <h2>Eco Feed</h2>
@@ -137,7 +178,18 @@
 <script>
 
     window.onload= function(){
+
+        
+        document.getElementById("results_btn").addEventListener("click", fetchResults);
        
+
+        function fetchResults() {
+        console.log("hello");
+        fetch('post.php?action=displayResults')
+        .then(response => response.json())
+        .then(data => { showResults(data);
+        })
+        }
        
         function fetchUsername() {
         fetch('post.php?action=get_username')
@@ -156,8 +208,15 @@
           console.error('Error:', error);
         });
     }
+    
+    
 
+   
+    
     fetchUsername();
+
+    
+
 
 
     document.querySelector("#get_Form").addEventListener("submit", function (event) {
@@ -170,22 +229,50 @@
                 method: 'POST',
                 body: data
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => {
-                showResults(result);
+                console.log(result);
+              //  showResults(result);
             })
             .catch(error => {
-                console.error('Error:', error);
+                // console.error('Error:', error);
             });
         });
 
     function showResults(arrayFromServer){
+        let pointsArray = [];
             document.querySelector(".post_results").innerHTML="";
             for(let i=0; i<arrayFromServer.length; i++){
 
-                //date
+                let user = arrayFromServer[i].USER;
+                let found =false;
+                for(let j = 0; j<pointsArray.length; j++){
+                    let  pointsObj = pointsArray[j];
+                    if(pointsObj.name ===user && found ===false){
+                        console.log("here");
+                        pointsObj.points++;
+                        found =true;
+                    }
+                    
+                }
+                if(found ===false){
+                    pointsArray.push({name:user, points:1});
+                }
+
+                //console.log(pointsArray);
                 let container = document.createElement("div");
                 container.classList.add("result_container");
+
+                //username
+                let username1 = document.createElement("h2");
+                username1.innerHTML = arrayFromServer[i].USER;
+                container.appendChild(username1);
+
+
+
+                //date
+                
+                
                 let date = document.createElement("h1");
                 date.innerHTML = "Date:"+arrayFromServer[i].DATE;
                 container.appendChild(date);
@@ -199,6 +286,9 @@
             }
 
          }
+
+        
+   
 
 
     }
