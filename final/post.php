@@ -72,38 +72,7 @@
          fclose($theFile);
  
  
-         //reading from the file
-        //  $theFileToRead = fopen('posts.txt', "r") or die("Unable to open file!");
-    //read until eof
-    //$i=0;
-
-    // $outArr = array();
-    // $NUM_PROPS = 3;
-    //  //echo("test");
-    //    while(!feof($theFileToRead)) {
-    //      //create an object to send back
- 
-    //      $packObj=new stdClass();
- 
-    //      for($j=0;$j<$NUM_PROPS;$j++){
-    //        $str = fgets($theFileToRead);
-    //        //split and return an array ...
-    //        $splitArr = explode(":",$str);
-    //        $key = $splitArr[0];
-    //        $val = $splitArr[1];
-    //        //append the key value pair
-    //        $packObj->$key = trim($val);
-    //      }
-    //      $outArr[]=$packObj;
-    //    }
- 
-    //    fclose($theFileToRead);
-    //      // var_dump($outArr);
-    //      // Now we want to JSON encode these values to send back.
-    //     $myJSONObj = json_encode($outArr);
-    //    echo $myJSONObj;
-    //    exit;
-     
+         
      
  }
 ?>
@@ -130,6 +99,7 @@
 
     <div class="user-info">
         <h2 id="usernameDisplay" class="display username"></h2>
+        <h2 class="points" id="points"></h2>
         <h1>Welcome back!</h1>
 
         
@@ -178,7 +148,8 @@
 <script>
 
     window.onload= function(){
-
+        
+        fetchUsername();
         
         document.getElementById("results_btn").addEventListener("click", fetchResults);
        
@@ -202,18 +173,47 @@
           usernameDisplay.style.fontSize = '3em';
           usernameDisplay.style.color = 'white';
           usernameDisplay.style.padding = '10px';
-          // Add other CSS properties as needed
+         
+          fetchPoints();
         })
         .catch(error => {
           console.error('Error:', error);
         });
     }
     
+    function fetchPoints(userLoggedIn) {
+        console.log("hello points");
+        fetch('post.php?action=displayResults')
+        .then(response => response.json())
+        .then(data => { showPoints(data,userLoggedIn);
+        })
+        }
+       
+        function fetchUsername() {
+        fetch('post.php?action=get_username')
+        .then(response => response.text())
+        .then(data => {
+         let usernameDisplay = document.getElementById('usernameDisplay');
+          usernameDisplay.textContent = "Hello " + data + " !";
+
+          
+          // Change CSS properties
+          usernameDisplay.style.fontSize = '3em';
+          usernameDisplay.style.color = 'white';
+          usernameDisplay.style.padding = '10px';
+         
+
+          fetchPoints(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
     
 
    
     
-    fetchUsername();
+   
 
     
 
@@ -232,7 +232,7 @@
             .then(response => response.json())
             .then(result => {
                 console.log(result);
-              //  showResults(result);
+             
             })
             .catch(error => {
                 // console.error('Error:', error);
@@ -252,6 +252,8 @@
                         console.log("here");
                         pointsObj.points++;
                         found =true;
+
+                        
                     }
                     
                 }
@@ -259,7 +261,21 @@
                     pointsArray.push({name:user, points:1});
                 }
 
-                //console.log(pointsArray);
+                for(let j = 0; j<pointsArray.length; j++){
+                    let  pointsObj = pointsArray[j];
+                    if(pointsObj.name ===user){
+                        console.log(pointsObj);
+                        let points1 = document.getElementById("points");
+                     points1.textContent = "Points:" + pointsObj.points; 
+                break;
+                        
+
+                        
+                    }
+                    
+                }
+
+               
                 let container = document.createElement("div");
                 container.classList.add("result_container");
 
@@ -268,7 +284,7 @@
                 username1.innerHTML = arrayFromServer[i].USER;
                 container.appendChild(username1);
 
-
+                
 
                 //date
                 
@@ -286,6 +302,71 @@
             }
 
          }
+
+         function showPoints(arrayFromServer,userLoggedIn){
+        let pointsArray = [];
+            //document.querySelector(".post_results").innerHTML="";
+            for(let i=0; i<arrayFromServer.length; i++){
+
+                let user = arrayFromServer[i].USER;
+                let found =false;
+                for(let j = 0; j<pointsArray.length; j++){
+                    let  pointsObj = pointsArray[j];
+                    if(pointsObj.name ===user && found ===false){
+                        console.log("here");
+                        pointsObj.points++;
+                        found =true;
+
+                        
+                    }
+                    
+                }
+                if(found ===false){
+                    pointsArray.push({name:user, points:1});
+                }
+
+                for(let j = 0; j<pointsArray.length; j++){
+                    let  pointsObj = pointsArray[j];
+                    if(pointsObj.name ===userLoggedIn){
+                        console.log(pointsObj);
+                        let points1 = document.getElementById("points");
+                     points1.textContent = "Points:" + pointsObj.points; 
+                break;
+                        
+
+                        
+                    }
+                    
+                }
+
+               
+                // let container = document.createElement("div");
+                // container.classList.add("result_container");
+
+                // //username
+                // let username1 = document.createElement("h2");
+                // username1.innerHTML = arrayFromServer[i].USER;
+                // container.appendChild(username1);
+
+                
+
+                // //date
+                
+                
+                // let date = document.createElement("h1");
+                // date.innerHTML = "Date:"+arrayFromServer[i].DATE;
+                // container.appendChild(date);
+
+
+                // //task
+                // let task = document.createElement("h1");
+                // task.innerHTML = arrayFromServer[i].TASK;
+                // container.appendChild(task);
+                // document.querySelector(".show").appendChild(container);
+            }
+
+         }
+
 
         
    
