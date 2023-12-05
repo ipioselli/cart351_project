@@ -24,19 +24,28 @@
         <h2><a href="">Quiz</a></h2>
         <h2><a style="float:right; border:solid; border-radius: 25px; padding:10px; " href="login.php">Login</a></h2>
     </div>
+
+    <h2 class="green">Go Green</h2>
    
     <!-- user section -->
     <div class="welcome-back">
         <h2 class="username" id="username"></h2>
         <h1>Welcome back!</h1>
         <p>Help offset your carbon footprint and go to your feed</p>
-        <h3><a href="feed.php">Go to Feed</a></h3>
+        <h3><a href="post.php">Go to Feed</a></h3>
     </div>
 
     <!-- about the website section -->
     <div class="about">
-    <h1>Climate Changes</h1>
-        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <h2>About Go Green</h2>
+        <p>Help offset your indvidual carbon footprint by doing simple tasks to help the environment
+
+        Carbon footprint is caused by human activities such as consuming electricity and driving a vehicle.
+        The overall effect of our actions have severe consequences on the planet so we must help by doing the smallest things we can.
+        This website allows you to track your daily tasks to offset your carbon footprint and maintain a longlasting streak. Learn more by clicking on
+        link below.
+        </p>
+       
         <h3><a href="">More Info</a></h3>
 
     </div>
@@ -47,23 +56,22 @@
 
 
 
-<section class="bout">
-    <h2>About us</h2>
-    <div class="main">
+<div class="features">
+    <h2>Features</h2>
+    <div class="features-main">
 
-        <div class="main-each">
-           <h1>Quiz</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At suscipit ex vel molestiae temporibus voluptatum laudantium exercitationem assumenda! Eligendi pariatur voluptate sapiente quaerat quia eum nulla voluptates alias suscipit ex.</p>
+        <div class="feachers-each">
+            <h2>Calender</h2>
 
         </div>
-        <div class="main-each">
-            <h1>Calendar</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt, reiciendis corporis error sapiente dolorem obcaecati facere perferendis sint reprehenderit! Quis omnis animi nesciunt in nihil quam perspiciatis beatae pariatur minus?</p>
-
+        <div class="feachers-each">
+            <h2>Interactive Map</h2>
+            
         </div>
 
     </div>
-</section>
+
+</div>
 
 
 

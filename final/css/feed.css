@@ -1,0 +1,93 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  body {
+    font-size: 20px;
+    font-family: Inter, NeutralFace;
+    color:black;
+    background: url("../images/sky1.png") no-repeat fixed center center;
+    background-size:cover;
+    height: 100%;
+
+  }
+
+
+  .topnav {
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+
+  
+ }
+
+
+.topnav a{
+   
+    margin:40px;
+    color:rgb(26, 56, 91);
+   text-decoration: none; 
+   float:left;
+   transition:0.2s;
+   padding: 10px;
+    
+
+  }
+
+  .topnav a:hover{
+    color:white;
+    background-color: rgba(59, 131, 213, 0.693);
+    border-radius: 25px;
+
+  }
+
+  .user-info{
+    background-color: rgba(59, 131, 213, 0.693);
+    text-align: left;
+    padding:50px;
+    margin:40px 200px 40px 200px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+
+  }
+
+  .tips{
+    background-color: rgba(59, 131, 213, 0.693);
+    text-align: left;
+    padding:100px;
+    margin:40px 200px 40px 200px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+  }
+
+  .form{
+    background-color: rgba(39, 88, 145, 0.693);
+    text-align: center;
+    padding:100px;
+    margin:40px 200px 40px 200px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+  }
+
+  fieldset{
+    border:none;
+  }
+
+  .form h2{
+    font-size: 3em;
+    color:white;
+  }
+
+  .post_results{
+    background-color: rgba(39, 88, 145, 0.693);
+    text-align: center;
+    padding:100px;
+    margin:40px 200px 40px 200px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+
+  }
