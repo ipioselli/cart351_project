@@ -108,6 +108,21 @@
 
     <div class="tips">
         <h2>How it works:</h2>
+        <p>Try to offset your individual carbon footprint by completing simple tasks that positively affect climate change</p>
+        <p>Post a task each day and receive a point each time you posts</p>
+        <h3>Example</h3>
+
+        <form id="search_Form">
+            <label for="number">Choose a number between 1-6: </label>
+            <input type="text" id="number" required>
+            <button class="tip_btn">Example</button>
+            
+        </form>
+        <div class="example">
+        <div id="tip-result" class = "tip_container"></div>
+
+        </div>
+        
     </div>
 
 
@@ -144,6 +159,28 @@
 </div>
 
 
+<div class="footer">
+        <h2>Contact Us</h2>
+
+        <div class="contact">
+        
+            <div class="contact-us">
+                <p>Ines Pioselli</p>
+            </div>
+            
+            <div class="contact-us">
+                <p>Huyen Tran </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="second-footer">
+        <h2>&#169;Cart 351 Final Project</h2>
+    </div>
+    
+
 
 
 
@@ -157,7 +194,35 @@
         fetchUsername();
         
         document.getElementById("results_btn").addEventListener("click", fetchResults);
+
+        document.getElementById("search_Form").addEventListener('submit', function(event){
+            event.preventDefault();
+
+            let numInput =document.getElementById('number').value;
+
+            fetch('json/post.json')
+            .then(response => response.json())
+            .then(data =>{
+                let numData = data.filter(entry => entry.number == numInput);
+                displayTips(numData);
+                console.log("yay");
+            });
+            console.log('help');
+        })
        
+        function displayTips(data){
+            let tipDiv = document.getElementById('tip-result');
+            tipDiv.innerHTML = '';
+
+        data.forEach(entry => {
+            let tipItem = document.createElement('div');
+            tipItem.classList.add('examples');
+            tipItem.innerHTML = `
+                <p> Example: ${entry.tip} </p>
+            `;
+            tipDiv.appendChild(tipItem);
+        });
+        }
 
         function fetchResults() {
         console.log("hello");
