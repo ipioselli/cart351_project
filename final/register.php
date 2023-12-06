@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Check if the user already exists in a text file (users.txt)
+    // Check if the user already exists in the user.txt file
     $usersFile = 'user.txt';
 
     if (file_exists($usersFile)) {
@@ -24,9 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             list($existingUsername, $_) = explode(':', $user);
             if ($existingUsername === $username) {
             
-                echo "User already exists!";
-                // echo "Go to Login page";
-                // header('Location: register.php?error=useralreadyexists');
+              
+                header('Location: register.php?error=useralreadyexists');
 
                 exit;
             }

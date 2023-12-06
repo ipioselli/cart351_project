@@ -52,13 +52,24 @@
     margin:40px 200px 40px 200px;
     border-radius: 25px;
     box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+    color:white;
 
+  }
+
+  h2.points{
+    color:rgb(26, 56, 91);
+    padding: 10px;
+    font-size: 2em;
+  }
+
+  .user-info h1{
+    padding: 10px;
   }
 
   .tips{
     background-color: rgba(59, 131, 213, 0.693);
     text-align: left;
-    padding:100px;
+    padding:50px;
     margin:40px 200px 40px 200px;
     border-radius: 25px;
     box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
@@ -67,7 +78,7 @@
   .form{
     background-color: rgba(39, 88, 145, 0.693);
     text-align: center;
-    padding:100px;
+    padding:50px;
     margin:40px 200px 40px 200px;
     border-radius: 25px;
     box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
@@ -75,19 +86,108 @@
 
   fieldset{
     border:none;
+ 
   }
 
   .form h2{
+    margin:20px;
+    font-size: 3em;
+    color:white;
+  }
+
+  .show-results{
+    background-color: rgba(73, 150, 239, 0.693);
+    text-align: center;
+    padding:50px;
+    margin:40px 200px 40px 200px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 5px 6px rgba(73, 150, 239, 0.693);
+    
+
+  }
+
+  .show-results h2{
+    margin:20px;
     font-size: 3em;
     color:white;
   }
 
   .post_results{
-    background-color: rgba(39, 88, 145, 0.693);
-    text-align: center;
-    padding:100px;
-    margin:40px 200px 40px 200px;
-    border-radius: 25px;
-    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: center;
 
   }
+
+
+
+  .result_container{
+    margin:10px;
+    padding:20px;
+    overflow: break-word;
+    background-color: rgba(38, 88, 136, 0.823);
+    border-radius: 25px;
+    width:40%;
+    color:white;
+  }
+
+#date{
+  color:rgb(26, 56, 91);
+  border:none;
+  padding:20px;
+  background-color: white;
+  margin:10px;
+}
+
+#task{
+  border: none;
+  padding:20px;
+}
+
+
+p label{
+  font-size: 1.5em;
+  color:rgb(26, 56, 91);
+  display: inline-block;
+}
+
+p.task{
+  padding: 20px;
+
+}
+
+#submit_btn{
+  margin:10px;
+  font-size: 1em;
+  background-color: white;
+  border: none;
+  padding:20px;
+  border-radius: 15px;
+  transition:0.4s;
+  width:15%;
+}
+
+#submit_btn:hover{
+  color:white;
+  background-color: rgb(26, 56, 91);
+  cursor: pointer;
+}
+
+#results_btn{
+  margin:20px;
+  font-size: 1em;
+  background-color: white;
+  border: none;
+  padding:20px;
+  border-radius: 15px;
+  transition:0.4s;
+  width:15%;
+}
+
+#results_btn:hover{
+  color:white;
+  background-color: rgb(26, 56, 91);
+  cursor: pointer;
+  
+}

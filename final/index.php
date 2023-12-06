@@ -1,5 +1,15 @@
+<?php
+ session_start();
 
+ if (isset($_GET['action']) && $_GET['action'] === 'get_username') {
+   if (isset($_SESSION['username'])) {
+     echo $_SESSION['username'];
+   }
+ 
+   exit; 
+ }
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +64,8 @@
 
 </div>
 
-
-
+<!-- idk if i want this page yet -->
+<!-- 
 <div class="features">
     <h2>Features</h2>
     <div class="features-main">
@@ -71,7 +81,7 @@
 
     </div>
 
-</div>
+</div> -->
 
 
 
@@ -106,20 +116,32 @@
 
     <script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-        let usernameElement = document.getElementById('username');
-        let username = "<?php session_start(); echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>";
+        window.onload = function(){
+        getUsername();
 
-        if (username !== '') {
-            usernameElement.textContent = "Hello, " + username + "!";
-            usernameElement.style.fontSize = '3em'; // Change font size dynamically
-            usernameElement.style.color = 'white'; // Change color dynamically
-            usernameElement.style.padding = '20px';
-            // Add other CSS properties as needed
-        } else {
-            usernameElement.textContent = "Please log in!";
+        function getUsername(){
+        fetch('index.php?action=get_username')
+        .then(response => response.text())
+        .then(data => {
+         let usernameDisplay = document.getElementById("username");
+          usernameDisplay.textContent = "Hello " + data + " !";
+          
+         
+          //css properties to display the username
+          usernameDisplay.style.fontSize = '3em';
+          usernameDisplay.style.color = 'white';
+          usernameDisplay.style.padding = '20px';
+         
+          
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+
+            }
         }
-    });
+
+        
            
 
         
