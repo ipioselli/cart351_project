@@ -13,7 +13,7 @@
     
     
          //reading from the file
-         $theFileToRead = fopen('posts.txt', "r") or die("Unable to open file!");
+         $theFileToRead = fopen('files/posts.txt', "r") or die("Unable to open file!");
     //read until eof
     //$i=0;
 
@@ -61,7 +61,7 @@
  
  // check that there is a FILES ARRAY
 
-    $filePath = 'posts.txt';
+    $filePath = 'files/posts.txt';
     $theFile = fopen($filePath, "a") or die("Unable to open file");
      //writing to the file
     

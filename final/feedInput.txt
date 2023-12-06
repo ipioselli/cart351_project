@@ -1,4 +1,0 @@
-ines: hey
-ines | ohayo | 2023-12-08
-ines | olalalala | 2023-12-08
-ines | whatsup | 2023-12-08

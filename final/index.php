@@ -56,7 +56,7 @@
         link below.
         </p>
        
-        <h3><a href="">More Info</a></h3>
+        <h3><a href="about.html">More Info</a></h3>
 
     </div>
 

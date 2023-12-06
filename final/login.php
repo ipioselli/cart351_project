@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Check if the user exists in a text file (users.txt)
-    $usersFile = 'user.txt';
+    $usersFile = 'files/user.txt';
     $userFound = false;
 
     if (file_exists($usersFile)) {
