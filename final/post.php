@@ -14,15 +14,12 @@
     
          //reading from the file
          $theFileToRead = fopen('files/posts.txt', "r") or die("Unable to open file!");
-    //read until eof
-    //$i=0;
-
+   
     $outArr = array();
     $NUM_PROPS = 3;
-     //echo("test");
+    
        while(!feof($theFileToRead)) {
          //create an object to send back
- 
          $packObj=new stdClass();
  
          for($j=0;$j<$NUM_PROPS;$j++){
@@ -38,8 +35,6 @@
        }
  
        fclose($theFileToRead);
-         // var_dump($outArr);
-         // Now we want to JSON encode these values to send back.
         $myJSONObj = json_encode($outArr);
        echo $myJSONObj;
        exit;
@@ -97,6 +92,7 @@
         <h2><a style="float:right; border:solid; border-radius: 25px; padding:10px; " href="login.php">Login</a></h2>
     </div>
 
+    <!-- user dashboard -->
     <div class="user-info">
         <h2 id="usernameDisplay" class="display username"></h2>
         <h1>Welcome to your eco gallery</h1>
@@ -106,13 +102,20 @@
         
     </div>
 
+   <!-- how it works -->
     <div class="tips">
         <h2>How it works:</h2>
+        <div class="paragraph">
         <p>Try to offset your individual carbon footprint by completing simple tasks that positively affect climate change</p>
         <p>Post a task each day and receive a point each time you posts</p>
-        <h3>Example</h3>
 
-        <form id="search_Form">
+        </div>
+       
+        
+
+        <!-- search form -->
+        <form id="search_Form" class="search">
+            <h3>Example</h3>
             <label for="number">Choose a number between 1-6: </label>
             <input type="text" id="number" required>
             <button class="tip_btn">Example</button>
@@ -125,7 +128,7 @@
         
     </div>
 
-
+    <!-- form to get user input -->
     <div class="form">
     <h2>Daily Eco Tasks</h2>
         <form id="get_Form">
@@ -142,7 +145,7 @@
         </form>
     </div>
 
-   
+   <!-- show all the results -->
     <div id="result" class="show-results">
     <h2>Eco Feed</h2>
          <p class="show_results"><input type="submit" name="submit" value="Results" id="results_btn"></p>
@@ -159,6 +162,7 @@
 </div>
 
 
+<!-- footer section -->
 <div class="footer">
         <h2>Contact Us</h2>
 
@@ -180,10 +184,6 @@
         <h2>&#169;Cart 351 Final Project</h2>
     </div>
     
-
-
-
-
 
 
 
@@ -239,7 +239,7 @@
          let usernameDisplay = document.getElementById('usernameDisplay');
           usernameDisplay.textContent = "Hello " + data + " !";
           
-          // Change CSS properties
+          //css 
           usernameDisplay.style.fontSize = '3em';
           usernameDisplay.style.color = 'white';
           usernameDisplay.style.padding = '10px';
@@ -283,18 +283,15 @@
 
    
     
-   
 
-    
-
-
-
+    //submit the posts on the click of a button
     document.querySelector("#get_Form").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent default form submission
 
             let form = document.querySelector("#get_Form");
             let data = new FormData(form);
 
+            //fetch from the php
             fetch('post.php', {
                 method: 'POST',
                 body: data
@@ -309,17 +306,22 @@
             });
         });
 
+    //function to show the results from the user
     function showResults(arrayFromServer){
+        //set up a points system
         let pointsArray = [];
+            //show the points with the results
             document.querySelector(".post_results").innerHTML="";
             for(let i=0; i<arrayFromServer.length; i++){
 
+                //go through the text file and count all the posts from the same user
                 let user = arrayFromServer[i].USER;
                 let found =false;
                 for(let j = 0; j<pointsArray.length; j++){
                     let  pointsObj = pointsArray[j];
                     if(pointsObj.name ===user && found ===false){
                         console.log("here");
+                        //increment points
                         pointsObj.points++;
                         found =true;
 
@@ -331,6 +333,7 @@
                     pointsArray.push({name:user, points:1});
                 }
 
+                //show the points on the user dashboard
                 for(let j = 0; j<pointsArray.length; j++){
                     let  pointsObj = pointsArray[j];
                     if(pointsObj.name ===user){
@@ -345,7 +348,7 @@
                     
                 }
 
-               
+                //display the post 
                 let container = document.createElement("div");
                 container.classList.add("result_container");
 
@@ -359,8 +362,6 @@
                 
 
                 //date
-                
-                
                 let date = document.createElement("p");
                 date.innerHTML = "Date: "+arrayFromServer[i].DATE;
                 container.appendChild(date);

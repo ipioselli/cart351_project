@@ -51,9 +51,21 @@
     padding:50px;
     margin:40px 200px 40px 200px;
     border-radius: 25px;
+    transition:0.6s;
     
     color:white;
 
+  }
+
+  .user-info:hover{
+    transform: scale(1.1);
+  }
+
+
+  
+
+  .example{
+    color:white;
   }
 
   h2.points{
@@ -72,8 +84,53 @@
     padding:50px;
     margin:40px 200px 40px 200px;
     border-radius: 25px;
+    color:white;
+    transition:0.6s;
     
   }
+
+  .tips:hover{
+    transform: scale(1.1);
+  }
+
+  #number{
+  color:rgb(26, 56, 91);
+  margin:10px;
+  font-size: 1em;
+  background-color: white;
+  border: none;
+  padding:10px;
+  border-radius: 15px;
+  transition:0.4s;
+  width:15%;
+  }
+
+
+  .tip_btn{
+    color:white;
+    margin:10px;
+    font-size: 0.8em;
+    background-color: rgb(26, 56, 91);
+    border: none;
+    padding:15px;
+    border-radius: 15px;
+    transition:0.4s;
+   
+  }
+
+  .tip_btn:hover{
+    color:rgb(26, 56, 91);
+    background-color: white;
+    cursor: pointer;
+  }
+
+ .tips h2{
+    margin-bottom: 10px;
+  } 
+
+  .paragraph{
+    margin-bottom: 10px;
+  } 
 
   .form{
     background-color: rgba(39, 88, 145,  0.845);
@@ -81,6 +138,7 @@
     padding:50px;
     margin:40px 200px 40px 200px;
     border-radius: 25px;
+  
     
   }
 

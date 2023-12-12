@@ -78,14 +78,7 @@
     
   }
 
-  .tips{
-    background-color: rgba(59, 131, 213, 0.693);
-    text-align: center;
-    padding:50px;
-    margin:20px 100px 20px 100px;
-    border-radius: 25px;
-    box-shadow: 3px 3px 5px 6px rgba(40, 90, 148, 0.693);
-  }
+
 
   .welcome-back h1{
     font-size: 1.5em;
